@@ -14,15 +14,29 @@ function getEnv(name: string, fallback?: string): string
     return value;
 }
 
-export const env = 
+const env =
 {
     appName: getEnv('APP_NAME', 'Security Platform'),
     port: Number(getEnv('PORT', '3000')),
+
     dbHost: getEnv('DB_HOST'),
     dbPort: Number(getEnv('DB_PORT', '3306')),
     dbName: getEnv('DB_NAME'),
     dbUser: getEnv('DB_USER'),
     dbPass: getEnv('DB_PASS'),
+
     redisHost: getEnv('REDIS_HOST'),
-    redisPort: Number(getEnv('REDIS_PORT', '6379'))
+    redisPort: Number(getEnv('REDIS_PORT', '6379')),
+
+    githubAppId: getEnv('GITHUB_APP_ID'),
+    githubClientId: getEnv('GITHUB_CLIENT_ID'),
+    githubClientSecret: getEnv('GITHUB_CLIENT_SECRET'),
+    githubWebhookSecret: getEnv('GITHUB_WEBHOOK_SECRET'),
+    githubPrivateKeyPath: getEnv('GITHUB_PRIVATE_KEY_PATH'),
+    githubAppSlug: getEnv('GITHUB_APP_SLUG'),
+};
+
+export 
+{
+    env
 };
